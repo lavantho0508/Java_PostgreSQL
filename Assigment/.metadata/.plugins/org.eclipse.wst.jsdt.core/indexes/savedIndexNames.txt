@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+F:\FullJavaFpoly\Java4\Assigment\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1030334338.index
+3066719772.index
+1185455487.index
+1505453543.index
+1301619853.index
+1719222823.index
+2317523433.index
