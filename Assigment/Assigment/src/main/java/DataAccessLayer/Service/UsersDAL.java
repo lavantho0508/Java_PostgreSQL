@@ -83,14 +83,17 @@ public class UsersDAL implements ServiceUsers{
 		try {
 			String query="SELECT*FROM USERS WHERE USERID=? AND PASSWORD=?";
 			PreparedStatement pre=ConnectPostgreSQL.conn.prepareStatement(query);
+			pre.setString(1, UserID);
+			pre.setString(2, Passwd);
 			ResultSet rs=pre.executeQuery();
 			while(rs.next()) {
 				u=new Users(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getBoolean(5));
 			}
+			return u;
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return u;
+		return null;
 	}
 	
 	

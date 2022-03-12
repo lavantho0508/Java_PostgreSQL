@@ -23,7 +23,13 @@ padding: 0;
 <jsp:param value="../Assigment/view/images/banner.png" name="images_banner"/>
 </jsp:include>
 <div class="row">
-<jsp:include page="layout/navbar.jsp"></jsp:include>
+<jsp:include page="layout/navbar.jsp" >
+
+<jsp:param  name="login_home" value="${login[0]}"/>
+<jsp:param  name="login_home" value="${login[1]}"/>
+<jsp:param  name="login_home" value="${login[2]}"/>
+<jsp:param  name="login_home" value="${login[3]}"/>
+</jsp:include>
 </div>
 </header>
 </div>

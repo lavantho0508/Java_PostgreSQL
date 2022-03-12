@@ -3,8 +3,8 @@ package BussinessLayer.BussinessEntities;
 public class Users {
 protected String userId;
 private String passWd;
-private String fullName;
 private String email;
+private String fullName;
 private boolean isAdmin;
 public Users() {
 	// TODO Auto-generated constructor stub
@@ -14,8 +14,8 @@ public Users(String userId, String passWd, String fullName, String email, boolea
 	super();
 	this.userId = userId;
 	this.passWd = passWd;
-	this.fullName = fullName;
 	this.email = email;
+	this.fullName = fullName;
 	this.isAdmin = isAdmin;
 }
 
