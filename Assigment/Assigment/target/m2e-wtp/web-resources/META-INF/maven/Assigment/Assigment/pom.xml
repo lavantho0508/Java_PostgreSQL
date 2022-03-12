@@ -4,6 +4,20 @@
   <artifactId>Assigment</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+    <dependencies>
+  <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+<dependency>
+  <groupId>org.postgresql</groupId>
+  <artifactId>postgresql</artifactId>
+  <version>42.3.3</version>
+</dependency>
+<dependency>
+<groupId>javax.servlet</groupId>
+<artifactId>jstl</artifactId>
+<version>1.2</version>
+</dependency>
+
+  </dependencies>
   <build>
     <plugins>
       <plugin>
@@ -19,13 +33,5 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-  <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>42.3.3</version>
-</dependency>
 
-  </dependencies>
 </project>

@@ -4,10 +4,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import BussinessLayer.BussinessComponents.ConnectPostgreSQL.ConnectPostgreSQL;
 import BussinessLayer.BussinessEntities.Users;
 import BussinessLayer.ServiceInterface.*;
-class UsersDAL implements ServiceUsers{
+import BussinessLayer.BussinessComponents.UtilitiesData.SHA_224;
+public class UsersDAL implements ServiceUsers{
 
 	@Override
 	public int addToDB(Users u){
@@ -15,7 +17,7 @@ class UsersDAL implements ServiceUsers{
 			String query="INSERT INTO USERS VALUES(?,?,?,?,?)";
 			PreparedStatement pre=ConnectPostgreSQL.conn.prepareStatement(query);
 			pre.setString(1, u.getUserId());
-			pre.setString(2,u.getPassWd());
+			pre.setString(2,SHA_224.SHA_224(u.getPassWd()));
 			pre.setString(3,u.getEmail());
 			pre.setString(4,u.getFullName());
 			pre.setBoolean(5, u.isAdmin());		
@@ -74,5 +76,22 @@ class UsersDAL implements ServiceUsers{
 		}
 		return list;
 	}
+
+	@Override
+	public Users loGin(String UserID, String Passwd) throws SQLException {
+		Users u=null;
+		try {
+			String query="SELECT*FROM USERS WHERE USERID=? AND PASSWORD=?";
+			PreparedStatement pre=ConnectPostgreSQL.conn.prepareStatement(query);
+			ResultSet rs=pre.executeQuery();
+			while(rs.next()) {
+				u=new Users(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getBoolean(5));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return u;
+	}
+	
 	
 }
