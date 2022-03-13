@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/main/java/DataAccessLayer/Service/UsersDAL.java=UTF-8
 encoding//src/main/java/PresentationLayer/LoginServlet.java=UTF-8
+encoding//src/main/java/PresentationLayer/RegServlet.java=UTF-8
 encoding//src/main/webapp/view/function/login.jsp=UTF-8
 encoding//src/main/webapp/view/layout/navbar.jsp=UTF-8

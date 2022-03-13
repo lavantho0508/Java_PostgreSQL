@@ -33,7 +33,11 @@ background-image: url("../Assigment/view/images/postgresql.png");
      <li class="list-group-item"><label for="email" class="form-label">EMAIL</label></li>
     <li class="list-group-item"><input type="email" class="form-control" placeholder="example@email.com" required="required" id="email" name="email"/></li>
     <div class="row">
-    <div class="col-8"></div>
+    <div class="col-8">
+    <div class="${reg}" role="alert">
+        ${reg_message}
+</div>
+    </div>
     <div class="col-3"><button class="btn btn-success">Sign up</button></div>
     </div>
   </ul>

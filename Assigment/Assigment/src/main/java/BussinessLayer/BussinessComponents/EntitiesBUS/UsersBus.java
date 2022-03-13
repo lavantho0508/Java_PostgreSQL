@@ -1,6 +1,7 @@
 package BussinessLayer.BussinessComponents.EntitiesBUS;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 
 import BussinessLayer.BussinessEntities.Users;
@@ -32,6 +33,16 @@ public class UsersBus implements ServiceUsers{
 	@Override
 	public Users loGin(String UserID, String Passwd) throws SQLException {
 		return user.loGin(UserID, Passwd);
+	}
+
+	@Override
+	public String isExist(String username) throws SQLException {
+		return user.isExist(username);
+	}
+
+	@Override
+	public HashMap<Object, String> sendError(String username, String passwd) throws SQLException {
+	return user.sendError(username, passwd);
 	}
 
 }
