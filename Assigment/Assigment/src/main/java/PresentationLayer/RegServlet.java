@@ -53,7 +53,7 @@ public class RegServlet extends HttpServlet {
         String email=request.getParameter("email");
       try {
 		HashMap<Object, String>error=us.sendError(username, passwd);
-		if(!error.isEmpty()) {
+		if(error.isEmpty()) {
 			 Users u=new Users(username, passwd,fullname, email, false);
 		      
 				if(us.addToDB(u)>0) {
@@ -72,7 +72,10 @@ public class RegServlet extends HttpServlet {
 		}else {
 			for(Map.Entry<Object, String> x:error.entrySet()) {
 				request.setAttribute(x.getKey().toString(), x.getValue());
+				
 			}
+			
+			request.getRequestDispatcher("/view/function/reg.jsp").forward(request, response);
 		}
 		
 	} catch (SQLException e1) {
